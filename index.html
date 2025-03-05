@@ -61,7 +61,7 @@ ul li.checked::before {
   border-color: #fff;
   border-style: solid;
   border-width: 0 2px 2px 0;
-  top: 10px;
+  top: 12px; /* Adjusted to prevent overlap */
   left: 16px;
   transform: rotate(45deg);
   height: 15px;
@@ -204,6 +204,7 @@ function newElement() {
   var categoryValue = document.getElementById("categorySelect").value;
   var t = document.createTextNode(inputValue + " (" + categoryValue + ")");
   li.appendChild(t);
+  li.className = "list-group-item"; // Add the same class as existing list items
   if (inputValue === '' || categoryValue === '') {
     alert("You must write something and select a category!");
   } else {
